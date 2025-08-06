@@ -6,7 +6,7 @@ namespace Catalog.Infra.Data
 {
     public static class ProductContextSeed
     {
-        public static void SeedData(IMongoCollection<Product> collection)
+        public async static void SeedData(IMongoCollection<Product> collection)
         {
             var exists = collection.Find(x => true).Any();
             var path = Path.Combine("Data", "SeedData", "products.json");
@@ -17,7 +17,7 @@ namespace Catalog.Infra.Data
 
                 foreach(var item in data)
                 {
-                    collection.InsertOne(item);
+                    await collection.InsertOneAsync(item);
                 }
             }
         }
