@@ -1,4 +1,6 @@
-﻿namespace Catalog.Application.Responses
+﻿using Catalog.Core.Entities;
+
+namespace Catalog.Application.Responses
 {
     public class BrandResponse
     {

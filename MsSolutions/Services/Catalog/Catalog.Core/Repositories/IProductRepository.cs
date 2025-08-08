@@ -4,11 +4,11 @@ namespace Catalog.Core.Repositories
 {
     public interface IProductRepository
     {
-        Task<IEnumerable<Product>> GetProducts();
+        Task<IList<Product>> GetProducts();
         Task<Product> GetProduct(string id);
-        Task<IEnumerable<Product>> GetProductsByName(string name);
-        Task<IEnumerable<Product>> GetProductsByBrand(string brandId);
-        Task<IEnumerable<Product>> GetProductsByType(string typeId);
+        Task<IList<Product>> GetProductsByName(string name);
+        Task<IList<Product>> GetProductsByBrand(string brandId);
+        Task<IList<Product>> GetProductsByType(string typeId);
         Task<Product> CreateProduct(Product product);
         Task<bool> UpdateProduct(Product product);
         Task<bool> DeleteProduct(string id);
