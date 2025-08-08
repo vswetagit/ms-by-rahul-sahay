@@ -1,13 +1,20 @@
 ﻿using Catalog.Core.Entities;
 using Catalog.Core.Repositories;
+using Catalog.Infra.Data;
+using MongoDB.Driver;
 
 namespace Catalog.Infra.Repositories
 {
     public class TypesRepository : ITypesRepository
     {
-        public Task<IEnumerable<ProductType>> GetAllTypes()
+        private readonly ICatalogContext _context;
+        public TypesRepository(ICatalogContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+        public async Task<IList<ProductType>> GetAllTypes()
+        {
+            return await _context.types.Find(x => true).ToListAsync();
         }
     }
 }
