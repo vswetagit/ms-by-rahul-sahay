@@ -1,8 +1,6 @@
-using Catalog.Application.Mappers;
 using Catalog.Core.Repositories;
 using Catalog.Infra.Data;
 using Catalog.Infra.Repositories;
-using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
