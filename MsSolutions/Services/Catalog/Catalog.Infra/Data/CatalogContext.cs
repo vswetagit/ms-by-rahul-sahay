@@ -4,7 +4,7 @@ using MongoDB.Driver;
 
 namespace Catalog.Infra.Data
 {
-    internal class CatalogContext : ICatalogContext
+    public class CatalogContext : ICatalogContext
     {
         public IMongoCollection<ProductBrand> brands { get; }
         public IMongoCollection<ProductType> types { get; }
