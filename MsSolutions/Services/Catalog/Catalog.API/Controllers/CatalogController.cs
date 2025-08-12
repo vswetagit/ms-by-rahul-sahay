@@ -15,7 +15,7 @@ namespace Catalog.API.Controllers
         {
             _mediator = mediator;
         }
-
+        // more than one response return type IActionResult(404 and 200 etc) and ActionResult if specific data needs to be returned 
         [HttpGet]
         [Route("[action]/{id}", Name = "GetProductById")]
         [ProducesResponseType(typeof(ProductResponse), (int)HttpStatusCode.OK)]
