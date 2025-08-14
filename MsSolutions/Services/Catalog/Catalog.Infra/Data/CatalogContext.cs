@@ -16,7 +16,7 @@ namespace Catalog.Infra.Data
 
             brands = db.GetCollection<ProductBrand>(configuration.GetValue<string>("DatabaseSettings:BrandsCollection"));
             types = db.GetCollection<ProductType>(configuration.GetValue<string>("DatabaseSettings:TypesCollection"));
-            products = db.GetCollection<Product>(configuration.GetValue<string>("DatabaseSettings:ProductCollection"));
+            products = db.GetCollection<Product>(configuration.GetValue<string>("DatabaseSettings:CollectionName"));
 
             BrandContextSeed.SeedData(brands);
             TypeContextSeed.SeedData(types);    

@@ -9,7 +9,7 @@ namespace Catalog.Infra.Data
         public async static void SeedData(IMongoCollection<ProductType> colllection)
         {
             var exists = colllection.Find(x => true).Any();
-            var path = Path.Combine("Data", "SeedData", "types.json");
+            var path = "../Catalog.Infra/Data/SeedData/types.json";
             if (!exists)
             {
                 var items = File.ReadAllText(path);
