@@ -1,5 +1,4 @@
 ﻿using Catalog.Application.Commands;
-using Catalog.Application.Mappers;
 using Catalog.Core.Entities;
 using Catalog.Core.Repositories;
 using MediatR;

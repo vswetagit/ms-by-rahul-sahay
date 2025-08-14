@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Catalog.Application.Mappers;
+﻿using Catalog.Application.Mappers;
 using Catalog.Application.Queries;
 using Catalog.Application.Responses;
 using Catalog.Core.Repositories;
@@ -10,11 +9,9 @@ namespace Catalog.Application.Handlers
     public class GetAllProductHandler : IRequestHandler<GetAllProductQuery,
         IList<ProductResponse>>
     {
-        private readonly IMapper _mapper;
         private readonly IProductRepository _repository;
-        public GetAllProductHandler(IMapper mapper, IProductRepository repository)
+        public GetAllProductHandler(IProductRepository repository)
         {
-            _mapper = mapper;
             _repository = repository;
         }
         public async Task<IList<ProductResponse>> Handle(GetAllProductQuery request,
